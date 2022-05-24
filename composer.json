@@ -1,0 +1,41 @@
+{
+    "name": "mhmiton/laravel-flashify",
+    "description": "Showing multiple flash messages for the laravel or laravel-livewire.",
+    "keywords": [
+        "laravel",
+        "laravel-flashify",
+        "laravel-livewire-flashify",
+        "livewire-flashify"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mehediul Hassan Miton",
+            "email": "mhmiton.dev@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "laravel/framework": "^5.5|6.0|7.0|^8.0|^9.0"
+    },
+    "require-dev": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mhmiton\\LaravelFlashify\\LaravelFlashifyServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Mhmiton\\LaravelFlashify\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
