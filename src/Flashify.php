@@ -111,7 +111,7 @@ class Flashify
         }
 
         if ($this->livewire && request()->hasHeader('X-Livewire')) {
-            return $this->livewire->dispatchBrowserEvent('flashify', $this->make());
+            return $this->livewire->dispatch('flashify', $this->make());
         }
 
         session()->push($this->sessionKey, $this->make());

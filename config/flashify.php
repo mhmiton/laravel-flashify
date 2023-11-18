@@ -26,6 +26,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Auto-inject Plugin Assets
+    |--------------------------------------------------------------------------
+    |
+    | This configuration option controls whether or not to auto-inject plugin assets.
+    |
+    | By default, auto-inject is enabled.
+    |
+    | When auto-inject is enabled, the package will automatically inject the necessary
+    | JavaScript and CSS for plugins.
+    |
+    */
+
+    'inject_plugins' => true,
+
+    /*
+    |--------------------------------------------------------------------------
     | Auto Translation For The Title and Text
     |--------------------------------------------------------------------------
     |

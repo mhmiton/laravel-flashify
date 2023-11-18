@@ -1,3 +1,24 @@
+@if (config('flashify.inject_plugins'))
+    <script data-turbolinks-eval="false" data-turbo-eval="false">
+        let cssFiles = [
+            'https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css',
+        ];
+
+        cssFiles.forEach(cssFile => {
+            let link = document.createElement('link');
+
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = cssFile;
+
+            document.getElementsByTagName('head')[0].appendChild(link);
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer data-turbolinks-eval="false" data-turbo-eval="false"></script>
+    <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js" defer data-turbolinks-eval="false" data-turbo-eval="false"></script>
+@endif
+
 <script>
     var laravelFlashifySwalFired = null;
 </script>
@@ -79,7 +100,7 @@
     };
 
     window.addEventListener('flashify', event => {
-        LaravelFlashify.fire(event.detail);
+        LaravelFlashify.fire(event.detail[0] ?? event.detail);
     });
 
     var laravelFlashifyDomLoadded = false;

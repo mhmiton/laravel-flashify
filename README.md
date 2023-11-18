@@ -35,8 +35,7 @@ php artisan vendor:publish --tag=flashify-views
 
 Include the package scripts in your layout file.
 
-```
-
+```html
 @flashifyScripts
 
 or
@@ -46,7 +45,6 @@ or
 or
 
 // Laravel 7 or greater
-
 <x-flashify::scripts />
 ```
 
@@ -54,9 +52,9 @@ or
 
 ### Usage
 
-Layout example:
+Layout example - if [inject_plugins](#inject_plugins) is enabled:
 
-```
+```html
 <!DOCTYPE html>
 <html>
     <head>
@@ -65,6 +63,23 @@ Layout example:
 
     <body>
 
+        <x-flashify::scripts />
+    </body>
+</html>
+```
+
+Layout example - if [inject_plugins](#inject_plugins) is disabled:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Laravel Flashify</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css" />
+    </head>
+
+    <body>
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
@@ -76,15 +91,17 @@ Layout example:
 
 ### Flash Message
 
-```
+```php
 flashify('Created', 'Data has been created successfully.');
 ```
 
-```
+```php
 flashify('Created', 'Data has been created successfully.', 'success', []);
 ```
 
-```
+or
+
+```php
 flashify()
     ->plugin('swal')
     ->title('Created')
@@ -93,7 +110,9 @@ flashify()
     ->fire();
 ```
 
-```
+or
+
+```php
 flashify([
     'plugin' => 'izi-toast',
     'title' => 'Updated',
@@ -104,7 +123,7 @@ flashify([
 
 ### Flash Message With Response
 
-```
+```php
 redirect()
     ->route('name')
     ->flashify('Created', 'Data has been created successfully.');
@@ -112,7 +131,7 @@ redirect()
 
 ### Flash Message With Livewire
 
-```
+```php
 flashify()
     ->plugin('swal')
     ->title('Created')
@@ -121,8 +140,9 @@ flashify()
     ->livewire($this)
     ->fire();
 ```
+or
 
-```
+```php
 flashify([
     'plugin' => 'izi-toast',
     'title' => 'Updated',
@@ -136,7 +156,7 @@ flashify([
 
 Define preset messages in the config file "presets" key.
 
-```
+```php
 'presets' => [
     'created' => [
         'plugin'  => 'swal',
@@ -150,15 +170,15 @@ Define preset messages in the config file "presets" key.
 
 Show preset messages:
 
-```
+```php
 flashify('created');
 ```
 
-```
+```php
 flashify()->fire('created');
 ```
 
-```
+```php
 flashify([
     'preset' => 'created',
 ]);
@@ -170,11 +190,11 @@ redirect()
     ->flashify('created');
 ```
 
-```
+```php
 flashify()->livewire($this)->fire('created');
 ```
 
-```
+```php
 flashify([
     'preset' => 'created',
     'livewire' => $this,
@@ -211,6 +231,26 @@ The config file is located at `config/flashify.php` after publishing the config 
 */
 
 'plugin' => 'swal',
+```
+
+**Inject Plugins**
+
+```
+/*
+|--------------------------------------------------------------------------
+| Auto-inject Plugin Assets
+|--------------------------------------------------------------------------
+|
+| This configuration option controls whether or not to auto-inject plugin assets.
+|
+| By default, auto-inject is enabled.
+|
+| When auto-inject is enabled, the package will automatically inject the necessary
+| JavaScript and CSS for plugins.
+|
+*/
+
+'inject_plugins' => true,
 ```
 
 **Trans**
