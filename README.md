@@ -250,7 +250,7 @@ The config file is located at `config/flashify.php` after publishing the config 
 |
 */
 
-'inject-plugins' => true,
+'inject_plugins' => true,
 ```
 
 #### Trans
