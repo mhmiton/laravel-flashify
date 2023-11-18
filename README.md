@@ -203,7 +203,7 @@ flashify([
 
 ### Flash Message With JavaScript
 
-```
+```js
 LaravelFlashify.fire({
     title: 'Created',
     text: 'Data has been created successfully.',
@@ -218,7 +218,7 @@ The config file is located at `config/flashify.php` after publishing the config 
 
 #### Plugin
 
-```
+```php
 /*
 |--------------------------------------------------------------------------
 | Plugin Configurations
@@ -235,7 +235,7 @@ The config file is located at `config/flashify.php` after publishing the config 
 
 #### Inject Plugins
 
-```
+```php
 /*
 |--------------------------------------------------------------------------
 | Auto-inject Plugin Assets
@@ -255,7 +255,7 @@ The config file is located at `config/flashify.php` after publishing the config 
 
 #### Trans
 
-```
+```php
 /*
 |--------------------------------------------------------------------------
 | Auto Translation For The Title and Text
@@ -273,7 +273,7 @@ The config file is located at `config/flashify.php` after publishing the config 
 
 #### Presets
 
-```
+```php
 /*
 |--------------------------------------------------------------------------
 | Preset Messages
