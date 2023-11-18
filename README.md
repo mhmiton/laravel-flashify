@@ -52,7 +52,7 @@ or
 
 ### Usage
 
-Layout example - if [inject_plugins](#inject_plugins) is enabled:
+Layout example - if [Inject Plugins](#inject-plugins) is enabled:
 
 ```html
 <!DOCTYPE html>
@@ -68,7 +68,7 @@ Layout example - if [inject_plugins](#inject_plugins) is enabled:
 </html>
 ```
 
-Layout example - if [inject_plugins](#inject_plugins) is disabled:
+Layout example - if [Inject Plugins](#inject-plugins) is disabled:
 
 ```html
 <!DOCTYPE html>
@@ -216,7 +216,7 @@ LaravelFlashify.fire({
 
 The config file is located at `config/flashify.php` after publishing the config file.
 
-**Plugin**
+#### Plugin
 
 ```
 /*
@@ -233,7 +233,7 @@ The config file is located at `config/flashify.php` after publishing the config 
 'plugin' => 'swal',
 ```
 
-**Inject Plugins**
+#### Inject Plugins
 
 ```
 /*
@@ -250,10 +250,10 @@ The config file is located at `config/flashify.php` after publishing the config 
 |
 */
 
-'inject_plugins' => true,
+'inject-plugins' => true,
 ```
 
-**Trans**
+#### Trans
 
 ```
 /*
@@ -271,7 +271,7 @@ The config file is located at `config/flashify.php` after publishing the config 
 'trans' => true,
 ```
 
-**Presets**
+#### Presets
 
 ```
 /*
