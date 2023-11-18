@@ -184,7 +184,7 @@ flashify([
 ]);
 ```
 
-```
+```php
 redirect()
     ->route('name')
     ->flashify('created');
