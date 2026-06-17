@@ -3,7 +3,7 @@
 if (! function_exists('flashify')) {
     function flashify($title = null, $text = null, $type = 'success', $options = [])
     {
-        $flashify = new Mhmiton\LaravelFlashify\Flashify();
+        $flashify = app(\Mhmiton\LaravelFlashify\Flashify::class);
 
         if (func_num_args()) {
             if (is_array($title)) {
